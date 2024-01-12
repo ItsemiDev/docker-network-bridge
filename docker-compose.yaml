@@ -23,6 +23,8 @@ services:
       dockerfile: Dockerfile-client
     networks:
       - second-bridge-network
+    depends_on:
+      - server
 
 networks:
   first-bridge-network:
