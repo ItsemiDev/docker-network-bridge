@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile-server
+    networks:
+      - first-bridge-network
+
+  client-communication:
+    build:
+      context: .
+      dockerfile: Dockerfile-client
+    networks:
+      - first-bridge-network
+    depends_on:
+      - server
+
+  client-isolation:
+    build:
+      context: .
+      dockerfile: Dockerfile-client
+    networks:
+      - second-bridge-network
+
+networks:
+  first-bridge-network:
+    driver: bridge
+  second-bridge-network:
+    driver: bridge

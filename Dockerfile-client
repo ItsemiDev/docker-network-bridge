@@ -1,0 +1,13 @@
+FROM python:3.8-slim
+
+# Install dependencies
+RUN pip install requests
+
+# Set working directory
+WORKDIR /app
+
+# Copy client.py
+COPY client.py /app/client.py
+
+# Run client.py
+CMD ["python", "/app/client.py"]

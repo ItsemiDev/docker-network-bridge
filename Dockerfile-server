@@ -1,0 +1,10 @@
+FROM python:3.8-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy server.py
+COPY server.py /app/server.py
+
+# Run server.py
+CMD ["python", "/app/server.py"]
