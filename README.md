@@ -57,6 +57,7 @@ docker build --rm -t bridge-network-client -f Dockerfile-client .
 
 - -t: tag/name for the build that will be called in the following command
 - --rm: Remove intermediate containers after a successful build
+- -f: Name of the Dockerfile (Default is PATH/Dockerfile)
 
 ### Step 2: Run the server inside the first-network
 
